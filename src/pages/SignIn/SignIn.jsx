@@ -1,5 +1,4 @@
 import React from "react";
-import { View, Text } from "react-native";
 import { Background, Container, Logo, AreaInput, Input, SubmiteButton, SubmiteText, Link, LinkText } from "./styles";
 import { Platform } from "react-native";
 import { useNavigation } from "@react-navigation/native";
