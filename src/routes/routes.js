@@ -1,11 +1,14 @@
-import { ActivityIndicator, View } from "react-native";
+import React, { useContext } from "react";
+import { AuthContext } from "../contexts/auth";
 import { AuthRoutes } from "./Auth.routes";
+import {AppRoutes} from './app.routes';
 
-export function AppRoutes(){
+export function Routes(){
   const loading = false;
-  const logado = false;
+  const {logado} = useContext(AuthContext)
 
   return(
-    logado ? <View></View> : <AuthRoutes/>
+    logado ?
+      <AppRoutes/> : <AuthRoutes/>
   )
 }
