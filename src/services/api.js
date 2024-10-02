@@ -1,6 +1,6 @@
 import axios from "axios";
-import { API_BASE_URL } from "@env";
+import { API_BASE_URL } from "../../@env";
 
 export const api = axios.create({
-    baseURL: API_BASE_URL,
+  baseURL: 'http://10.0.0.165:3333'
 })
