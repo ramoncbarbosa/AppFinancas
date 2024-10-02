@@ -1,10 +1,35 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { Platform } from "react-native";
+import { Background, Container, AreaInput, Input, SubmiteButton, SubmiteText, Link, LinkText } from "./styles";
 
 export function SignUp(){
   return(
-    <View>
-      <Text>Tela Cadastro</Text>
-    </View>
+    <Background
+      behavior={Platform.OS === 'ios' ? 'padding' : ''}
+      enabled
+    >
+      <Container>
+        <AreaInput>
+          <Input 
+            placeholder="Nome"
+          />
+        </AreaInput>
+        <AreaInput>
+          <Input 
+            placeholder="Seu e-mail"
+          />
+        </AreaInput>
+        <AreaInput>
+          <Input 
+            placeholder="Sua senha"
+          />
+        </AreaInput>
+        <SubmiteButton>
+          <SubmiteText>
+            Cadastrar
+          </SubmiteText>
+        </SubmiteButton>
+      </Container>
+    </Background>
   )
 }
