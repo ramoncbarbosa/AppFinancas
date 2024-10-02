@@ -30,8 +30,16 @@ export default function AuthProvider({ children }) {
     }
   }
 
+  async function signIn(email, password) {
+    try{
+      alert(`Teste ${email} e ${password}`)
+    } catch(err){
+      alert('Erro ao tentar logar, verifique seus dados de login', err)
+    }
+  }
+
   return (
-    <AuthContext.Provider value={{ logado: !!user, user, signUp, loadingAuth }}>
+    <AuthContext.Provider value={{ logado: !!user, user, signUp, loadingAuth, signIn }}>
       {children}
     </AuthContext.Provider>
   )
