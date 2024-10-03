@@ -10,6 +10,7 @@ export default function AuthProvider({ children }) {
 
   const navigation = useNavigation();
 
+  //criando users
   async function signUp(email, password, nome) {
     setLoadingAuth(true);
 
@@ -30,11 +31,26 @@ export default function AuthProvider({ children }) {
     }
   }
 
+  //logando
   async function signIn(email, password) {
+    setLoadingAuth(false); 
     try{
-      alert(`Teste ${email} e ${password}`)
+      const response = await api.post('/login', {
+        email: email,
+        password: password
+      })
+
+      const {id, name, token} = response.data
+      const data = {
+        id, 
+        name,
+        token,
+        email,
+      }
+
     } catch(err){
-      alert('Erro ao tentar logar, verifique seus dados de login', err)
+      alert('Erro ao logar, verifique seus dados de login', err)
+      setLoadingAuth(false);
     }
   }
 
