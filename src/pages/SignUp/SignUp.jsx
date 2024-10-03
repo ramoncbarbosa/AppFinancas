@@ -8,7 +8,6 @@ import { AuthContext } from "../../contexts/auth";
 
 
 export function SignUp() {
-
   const { signUp, loadingAuth } = useContext(AuthContext)
 
   const [nome, setNome] = useState('')
@@ -16,6 +15,7 @@ export function SignUp() {
   const [password, setPassword] = useState('')
 
   const navigation = useNavigation();
+
   function handleReturnSignIn() {
     navigation.navigate('SignIn')
   }
