@@ -2,13 +2,16 @@ import React, {useContext} from "react";
 import {Button, Text, TouchableOpacity, View} from 'react-native';
 
 import { AuthContext } from "../../contexts/auth";
+import { Background } from "./styles";
+
+import { Header } from "../../components/Header/Header";
 
 
 export function Home(){
-  const {signOut, user} = useContext(AuthContext)
+  const {user} = useContext(AuthContext)
   return (
-    <View>
-      <Text>Nome: {user.name}</Text>
-    </View>
+    <Background>
+      <Header/>
+    </Background>
   )
 }
