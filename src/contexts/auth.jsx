@@ -62,7 +62,7 @@ export default function AuthProvider({ children }) {
     }
   }
 
-  //logando
+  //logando o user
   async function signIn(email, password) {
     setLoadingAuth(false);
     try {
@@ -82,7 +82,7 @@ export default function AuthProvider({ children }) {
       //passando para a api que as requisições devem usar o Bearer Token
       api.defaults.headers['Authorization'] = `Bearer ${token}`
 
-      //permanecendo logado
+      //permanecendo logado 
       await AsyncStorage.setItem('@tokenApp', token)
 
       setUser({
@@ -99,8 +99,16 @@ export default function AuthProvider({ children }) {
     }
   }
 
+  //deslogando user
+  async function signOut() {
+    await AsyncStorage.clear()
+    .then(()=> {
+      setUser(null)
+    });
+  }
+
   return (
-    <AuthContext.Provider value={{ logado: !!user, user, signUp, loadingAuth, signIn, loading }}>
+    <AuthContext.Provider value={{ logado: !!user, user, signUp, loadingAuth, signIn, signOut, loading }}>
       {children}
     </AuthContext.Provider>
   )
