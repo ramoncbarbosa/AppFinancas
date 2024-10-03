@@ -11,26 +11,28 @@ function CustomDrawerContent(props) {
   const { user, signOut } = useContext(AuthContext);
 
   return (
-    <DrawerContentScrollView {...props}>
-      //nome do user logado
-      <View style={{ margin: 20, padding: 10, backgroundColor: '#BBB', borderRadius: 8, alignItems: 'center' }}>
-        <Text style={{ fontSize: 14, fontWeight: 'semibold', color: '#000' }}>
-          {user.name}
-        </Text>
+    <DrawerContentScrollView {...props} contentContainerStyle={{ flex: 1 }}>
+      <View style={{ flex: 1, justifyContent: 'space-between' }}>
+        {/* Renderiza o nome do usuário no topo do drawer */}
+        <View style={{ padding: 6, margin: 20, backgroundColor: '#BBB', borderRadius: 4, alignItems: 'center' }}>
+          <Text style={{ fontSize: 16, fontWeight: 'bold', color: '#131313' }}>{user.name}</Text>
+        </View>
+
+        {/* Button de logout ao final do drawer */}
+        <TouchableOpacity
+          onPress={() => signOut()}
+          style={{ padding: 6, margin: 20, backgroundColor: '#f00', borderRadius: 4, alignItems: 'center' }}
+        >
+          <Text style={{ fontSize: 16, fontWeight: 'semibold', color: '#FFF' }}>Sair</Text>
+        </TouchableOpacity>
       </View>
-      //button de sair
-      <TouchableOpacity onPress={()=> signOut()}>
-        <Text>Sair</Text>
-      </TouchableOpacity>
     </DrawerContentScrollView>
   );
 }
 
 export function AppRoutes() {
   return (
-    <AppDrawer.Navigator
-      drawerContent={(props) => <CustomDrawerContent {...props} />}
-    >
+    <AppDrawer.Navigator drawerContent={(props) => <CustomDrawerContent {...props} />}>
       <AppDrawer.Screen
         name="Home"
         component={Home}
