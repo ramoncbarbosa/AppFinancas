@@ -9,9 +9,6 @@ export function Home(){
   return (
     <View>
       <Text>Nome: {user.name}</Text>
-      {/* <TouchableOpacity onPress={()=> signOut()}>
-        <Text>Sair</Text>
-      </TouchableOpacity> */}
     </View>
   )
 }
