@@ -13,12 +13,13 @@ function CustomDrawerContent(props) {
   return (
     <DrawerContentScrollView {...props} contentContainerStyle={{ flex: 1 }}>
       <View style={{ flex: 1, justifyContent: 'space-between' }}>
+        
         {/* Renderiza o nome do usuário no topo do drawer */}
         <View style={{ padding: 6, margin: 20, backgroundColor: '#BBB', borderRadius: 4, alignItems: 'center' }}>
           <Text style={{ fontSize: 16, fontWeight: 'bold', color: '#131313' }}>{user.name}</Text>
-        </View>
 
-        {/* Button de logout ao final do drawer */}
+        {/* Button de logout*/}
+        </View>
         <TouchableOpacity
           onPress={() => signOut()}
           style={{ padding: 6, margin: 20, backgroundColor: '#f00', borderRadius: 4, alignItems: 'center' }}
