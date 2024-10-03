@@ -5,13 +5,13 @@ import { AuthContext } from "../../contexts/auth";
 
 
 export function Home(){
-  const {signOut} = useContext(AuthContext)
+  const {signOut, user} = useContext(AuthContext)
   return (
     <View>
+      <Text>Nome: {user.name}</Text>
       <TouchableOpacity onPress={()=> signOut()}>
         <Text>Sair</Text>
       </TouchableOpacity>
-      {/* <Button title="Siar" onPress={()=> signOut()}/> */}
     </View>
   )
 }
