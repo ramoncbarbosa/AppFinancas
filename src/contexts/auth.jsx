@@ -48,6 +48,16 @@ export default function AuthProvider({ children }) {
         email,
       }
 
+      //passando para a api que as requisições devem usar o Bearer Token
+      api.defaults.headers['Authorization'] = `Bearer ${token}`
+      setUser({
+        id,
+        name,
+        email,
+      })
+
+      setLoadingAuth(false);
+
     } catch(err){
       alert('Erro ao logar, verifique seus dados de login', err)
       setLoadingAuth(false);
