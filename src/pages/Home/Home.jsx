@@ -11,7 +11,7 @@ export function Home(){
   const {user} = useContext(AuthContext)
   return (
     <Background>
-      <Header/>
+      <Header title="Minha MovimentaÇões"/>
     </Background>
   )
 }
