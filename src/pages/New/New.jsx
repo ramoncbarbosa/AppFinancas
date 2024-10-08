@@ -9,7 +9,11 @@ import {RegisterTypes} from '../../components/RegisterTypes/RegisterTypes'
 import {api} from '../../services/api.js'
 import {format} from 'date-fns'
 
+import { useNavigation } from "@react-navigation/native";
+
 export function New(){
+  const navigation = useNavigation(); 
+
   const [labelInput, setLabelInput] = useState('');
   const [valueInput, setValueInput] = useState('');
   const [type, setType] = useState('receita')
@@ -50,7 +54,8 @@ export function New(){
     })
 
     setLabelInput("");
-    setValueInput("")
+    setValueInput("");
+    navigation.navigate('Home');
   }
 
 
