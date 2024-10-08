@@ -4,6 +4,8 @@ import { Background, Input, SubmitButton, SubmitText } from "./styles";
 import { Header } from "../../components/Header/Header";
 import { SafeAreaView, TouchableWithoutFeedback, Keyboard } from "react-native";
 
+import {RegisterTypes} from '../../components/RegisterTypes/RegisterTypes'
+
 export function New(){
   const [labelInput, setLabelInput] = useState('');
   const [valueInput, setValueInput] = useState('');
@@ -27,6 +29,9 @@ export function New(){
             value={valueInput}
             onChangeText={(valorDigitado) => setValueInput(valorDigitado)}
             />
+            
+            {/* o sendTypechanged e para trocar entre receita e despesa no states no compoentn RegisterTypes */}
+            <RegisterTypes type={type} sendTypeChenged={(item) => setType(item)}/>
 
           <SubmitButton>
             <SubmitText>
