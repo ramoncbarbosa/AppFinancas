@@ -34,7 +34,7 @@ export function AppRoutes() {
         
       />
       <AppDrawer.Screen 
-        name="New"
+        name="Registrar"
         component={New}
       />
     </AppDrawer.Navigator>
