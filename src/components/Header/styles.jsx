@@ -20,3 +20,8 @@ export const ButtonMenu = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
 `;
+
+export const ButtonMenuLogout = styled.TouchableOpacity`
+  margin-left: 60px;
+  margin-right: 15px;
+`;
