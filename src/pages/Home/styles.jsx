@@ -1,9 +1,10 @@
 import styled from 'styled-components/native'
 
-export const Background = styled.SafeAreaView `
-  flex: 1;
-  background-color: '#F0F4FF';
-`
+export const Background = styled.SafeAreaView`
+  flex:1;
+  background-color: #F0F4FF;
+`;
+
 export const ListReceita = styled.FlatList`
-  max-width: 400px;
+  max-height: 190px;
 `;

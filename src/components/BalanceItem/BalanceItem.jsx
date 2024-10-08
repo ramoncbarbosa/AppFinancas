@@ -2,6 +2,7 @@ import React, { useMemo } from "react";
 import { Container, Label, Balance } from "./styles";
 
 export function BalanceItem({data}){
+  
   const labelName = useMemo(()=> {
     if(data.tag === 'saldo'){
       return{

@@ -23,7 +23,7 @@ export function Home(){
     let isActive = true;
 
     async function getMovimentos() {
-      let dataFormatada = format(dateHoje, 'dd/mm/yyyy');
+      let dataFormatada = format(dateHoje, 'dd/MM/yyyy');
 
       const balance = await api.get('/balance', {
         params: {
