@@ -18,7 +18,8 @@ export function RegisterTypes({ type, sendTypeChenged }){
   return(
     <RegisterContainer>
       <RegisterTypeButton
-        checked={typeChecked === 'receita' ? true: false} onPress={() => changeType('receita')}
+        checked={typeChecked === 'receita' ? true: false}
+        onPress={() => changeType('receita')}
       >
         <Feather name='arrow-up' size={25} color='#121212'/>
         <RegisterLabel>

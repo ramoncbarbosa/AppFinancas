@@ -27,4 +27,5 @@ export const SubmitText = styled.Text`
     font-size: 21px;
     font-weight: bold;
     text-align: center;
+    padding: 10px;
 `;
