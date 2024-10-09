@@ -1,8 +1,8 @@
 import React, { createContext, useState, useEffect } from "react";
-import { api } from "../services/api";
-import { useNavigation } from "@react-navigation/native";
+import { api } from '../services/api';
+import { useNavigation } from '@react-navigation/native';
 
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export const AuthContext = createContext({});
 
@@ -23,7 +23,7 @@ export default function AuthProvider({ children }) {
             'Authorization': `Bearer ${storageUser}`
           }
         })
-        
+
         //qualquer problema com o token, vai ter redirecionamento para a tela incial
         .catch(() => {
           setUser(null);
@@ -82,7 +82,7 @@ export default function AuthProvider({ children }) {
       //passando para a api que as requisições devem usar o Bearer Token
       api.defaults.headers['Authorization'] = `Bearer ${token}`
 
-      //permanecendo logado 
+      //permanecendo logado
       await AsyncStorage.setItem('@tokenApp', token)
 
       setUser({
