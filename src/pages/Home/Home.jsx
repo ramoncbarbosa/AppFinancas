@@ -21,6 +21,7 @@ export function Home() {
 
   const [listReceita, setListaReceita] = useState([])
   const [dateHoje, setDateHoje] = useState(new Date());
+  const [movimentos, setMovimentos] = useState([])
 
   //consultando a receita do user
   useEffect(() => {
@@ -29,6 +30,14 @@ export function Home() {
     async function getMovimentos() {
       let dataFormatada = format(dateHoje, 'dd/MM/yyyy');
 
+      //buscando as movimentações financeiras
+      const receives = await api.get('/receives', {
+        params: {
+          date: dataFormatada
+        }
+      })
+
+      //pegando os dados financeiros
       const balance = await api.get('/balance', {
         params: {
           date: dataFormatada
@@ -36,15 +45,16 @@ export function Home() {
       })
 
       if (isActive) {
+        setMovimentos(receives.data);
         setListaReceita(balance.data);
       }
 
     }
 
     getMovimentos();
-    return () => {
-      isActive = false;
-    }
+
+    return () => isActive = false;
+    
   }, [isFocused])
 
   const { user } = useContext(AuthContext)
@@ -71,10 +81,11 @@ export function Home() {
       </Area>
 
       <List
-        data={[]}
+        data={movimentos}
         keyExtrator={(item)=> item.id}
-        renderItem={(item)=> <HistoryList/>}
+        renderItem={ ({item}) => <HistoryList data={item}/> }
         showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingBottom: 20 }}
       />
 
     </Background>
