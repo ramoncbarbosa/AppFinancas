@@ -10,8 +10,6 @@ export function Profile(){
   const {user, signOut} = useContext(AuthContext);
   const navigation = useNavigation()
 
-
-
   return(
     <Container>
       <Header title="Meu Perfil" />
