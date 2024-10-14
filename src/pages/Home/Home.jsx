@@ -20,7 +20,7 @@ export function Home() {
   const isFocused = useIsFocused();
 
   const [listReceita, setListaReceita] = useState([])
-  const [dateHoje, setDateHoje] = useState(new Date());
+  const [dateHoje, setDateHoje] = useState(new Date()); //mostra as movimentações do dia
   const [movimentos, setMovimentos] = useState([])
 
   //consultando a receita do user
@@ -55,7 +55,25 @@ export function Home() {
 
     return () => isActive = false;
     
-  }, [isFocused])
+  }, [isFocused, movimentos])
+
+
+  //criando função de deletar um item
+  async function handleDelete(id) {
+    try{
+      await api.delete('/receives/delete', {
+        params: {
+          item_id: id
+        }
+      })
+
+      setDateHoje(new Date())
+      
+    } catch(err){
+      alert(err)
+    }
+  }
+
 
   const { user } = useContext(AuthContext)
 
@@ -83,7 +101,7 @@ export function Home() {
       <List
         data={movimentos}
         keyExtrator={(item)=> item.id}
-        renderItem={ ({item}) => <HistoryList data={item}/> }
+        renderItem={ ({item}) => <HistoryList data={item} deleteItem={handleDelete} /> }
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingBottom: 20 }}
       />
