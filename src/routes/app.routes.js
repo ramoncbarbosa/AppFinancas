@@ -5,6 +5,7 @@ import { CustomDrawer } from './CustomDrawer';
 
 import { Home } from '../pages/Home/Home';
 import { New } from '../pages/New/New';
+import { Profile } from '../pages/Profile/Profile';
 
 const AppDrawer = createDrawerNavigator();
 
@@ -36,6 +37,10 @@ export function AppRoutes() {
       <AppDrawer.Screen 
         name="Registrar"
         component={New}
+      />
+      <AppDrawer.Screen 
+        name="Perfil"
+        component={Profile}
       />
     </AppDrawer.Navigator>
   );

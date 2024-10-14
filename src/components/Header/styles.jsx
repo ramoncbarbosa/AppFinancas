@@ -8,15 +8,17 @@ export const Container = styled.SafeAreaView `
   padding-right: 15px; 
   margin-bottom: 15px;
   width: 100%;
-  max-height: 60px;
-  justify-content: space-between;
+  /* max-height: 60px; */
+  /* justify-content: space-between; */
+  justify-content: center;
 `;
 
 export const Title = styled.Text`
   font-size: 22px;
   margin-left: 8px;
   flex: 1; 
-  text-align: center; 
+  /* text-align: center;  */
+  color: #121212;
 `;
 
 export const ButtonMenu = styled.TouchableOpacity`
@@ -24,7 +26,7 @@ export const ButtonMenu = styled.TouchableOpacity`
   align-items: center;
 `;
 
-export const ButtonMenuLogout = styled.TouchableOpacity`
-  justify-content: center;
-  align-items: center; 
-`;
+// export const ButtonMenuLogout = styled.TouchableOpacity`
+//   justify-content: center;
+//   align-items: center; 
+// `;

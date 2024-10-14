@@ -22,11 +22,11 @@ export function Header({ title }) {
       )}
 
 
-      <ButtonMenuLogout
+      {/* <ButtonMenuLogout
         onPress={() => signOut()}
       >
         <Icon name="log-out" size={32} color="#121212" />
-      </ButtonMenuLogout>
+      </ButtonMenuLogout> */}
     </Container>
   )
 }
