@@ -8,8 +8,10 @@ export const Container = styled.SafeAreaView`
 
 export const Message = styled.Text`
   font-size: 18px;
-  font-weight: bold;
+
+  margin-bottom: 30px;
   margin-top: 24px;
+  color: #121212;
 `
 
 export const Name = styled.Text`
