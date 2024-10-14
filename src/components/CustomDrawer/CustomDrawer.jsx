@@ -5,7 +5,7 @@ import { DrawerItemList, DrawerContentScrollView } from "@react-navigation/drawe
 
 import { AuthContext } from "../../contexts/auth";
 
-export function CustomDrawer( {props} ){
+export function CustomDrawer( props ){
   const {user} = useContext(AuthContext)
 
   return(
@@ -17,11 +17,14 @@ export function CustomDrawer( {props} ){
           resizeMethod="contain"
         />
       </View>
-      <Text style={{fontSize: 18, marginTop: 14}}>
+      <Text style={{fontSize: 18, marginTop: 14, textAlign: 'center', color: '#121212'}}>
         Bem-Vindo
       </Text>
-      <Text style={{fontSize: 17, fontWeight: 'bold', marginBottom: 14, paddingHorizontal: 20}} numberOfLines={1}>
-        {user.name}
+      <Text 
+        style={{fontSize: 17, fontWeight: 'bold', marginBottom: 14, paddingHorizontal: 20, textAlign: 'center', color: '#121212'}} 
+        numberOfLines={1}
+      >
+        {user && user.name}
       </Text>
       <DrawerItemList {...props} />
     </DrawerContentScrollView>
