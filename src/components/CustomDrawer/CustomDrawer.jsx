@@ -11,7 +11,7 @@ export function CustomDrawer(props) {
       <View style={{ alignItems: 'center', justifyContent: 'center', marginTop: 25 }}>
         <Image
           source={require('../../assets/logo.png')}
-          style={{ width: 90, height: 90 }}
+          style={{ width: 110, height: 90 }}
           resizeMethod="contain"
         />
       </View>
@@ -26,12 +26,12 @@ export function CustomDrawer(props) {
       </Text>
       <DrawerItemList {...props} />
 
-      <DrawerItem
+      {/* <DrawerItem
         label="Sair"
         labelStyle={{color: '#F0F4FF'}}
         onPress={signOut}
         style={{ backgroundColor: 'red'}}
-      />
+      /> */}
     </DrawerContentScrollView>
   );
 }
